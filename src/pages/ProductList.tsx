@@ -1,3 +1,4 @@
+import ProductCard from '../components/ProductCard';
 import useProducts from '../hooks/useProducts';
 
 const ProductList = () => {
@@ -8,13 +9,19 @@ const ProductList = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <div
+      style={{
+        display: 'grid',
+        gap: '20px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        justifyItems: 'center',
+        width: '100%',
+      }}
+    >
       {products?.map((product) => (
-        <li key={product.id}>
-          {product.name} - £{product.price}
-        </li>
+        <ProductCard key={product.id} product={product} />
       ))}
-    </ul>
+    </div>
   );
 };
 
