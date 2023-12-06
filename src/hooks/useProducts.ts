@@ -1,13 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 import apiClient from '../services/api-client';
-
-export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-}
+import Product from '../entities/Product';
 
 const fetchProducts = () =>
   apiClient
