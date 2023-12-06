@@ -1,8 +1,6 @@
-import './App.css';
+import useProducts from '../hooks/useProducts';
 
-import useProducts from './hooks/useProducts';
-
-function App() {
+const ProductList = () => {
   const { data: products, error, isLoading } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
@@ -18,6 +16,6 @@ function App() {
       ))}
     </ul>
   );
-}
+};
 
-export default App;
+export default ProductList;
