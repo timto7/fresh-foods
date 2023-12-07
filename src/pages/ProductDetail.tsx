@@ -3,8 +3,8 @@ import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
-import useProducts from '../hooks/useProducts';
 import QuantitySpinner from '../components/QuantitySpinner';
+import useProducts from '../hooks/useProducts';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -33,13 +33,15 @@ const ProductDetail = () => {
 
   if (notFound) return <p>The requested product does not exist.</p>;
 
+  if (!product) return null;
+
   return (
     <>
       <ContinueShoppingButton />
-      <h1>{product!.name}</h1>
-      <p>{product!.description}</p>
-      <p>£{product!.price}</p>
-      <QuantitySpinner product={product!} />
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <p>£{product.price}</p>
+      <QuantitySpinner product={product} />
     </>
   );
 };
