@@ -11,17 +11,39 @@ const Header = () => {
         style={{
           backgroundColor: 'white',
           boxSizing: 'border-box',
-          height: '60px',
-          padding: '10px',
           position: 'fixed',
           width: '100%',
         }}
       >
         <Content>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{
+              alignItems: 'center',
+              display: 'flex',
+              height: '60px',
+              justifyContent: 'space-between',
+            }}
+          >
             <div>
-              <Link to="/">
-                <img src={logo} height={40} width={40} />
+              <Link to="/" style={{ textDecoration: 'none' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <img
+                    src={logo}
+                    height={40}
+                    width={40}
+                    style={{ marginRight: '1em' }}
+                  />
+                  <span
+                    style={{
+                      color: 'black',
+                      fontSize: 28,
+                      fontWeight: 800,
+                      paddingTop: '0.25em',
+                    }}
+                  >
+                    Fresh Food
+                  </span>
+                </div>
               </Link>
             </div>
             <div>
