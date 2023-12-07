@@ -12,25 +12,33 @@ interface BasketStore {
   basket: BasketItem[];
   addItem: (product: Product) => void;
   removeItem: (product: Product) => void;
+  removeAllOfItem: (product: Product) => void;
   clearBasket: () => void;
 }
 
 const useBasketStore = create<BasketStore>()(
   persist(
-    (set, get) => ({
-      basket: [],
-      addItem: (product) => {
+    (set, get) => {
+      const updateBasket = (
+        product: Product,
+        func: (product: Product, basket: BasketItem[]) => BasketItem[]
+      ) => {
         const { basket } = get();
-        const updatedBasket = addItemSetter(product, basket);
+
+        const updatedBasket = func(product, basket);
+
         set({ basket: updatedBasket });
-      },
-      removeItem: (product) => {
-        const { basket } = get();
-        const updatedBasket = removeItemSetter(product, basket);
-        set({ basket: updatedBasket });
-      },
-      clearBasket: () => set(() => ({ basket: [] })),
-    }),
+      };
+
+      return {
+        basket: [],
+        addItem: (product) => updateBasket(product, addItemSetter),
+        removeItem: (product) => updateBasket(product, removeItemSetter),
+        removeAllOfItem: (product) =>
+          updateBasket(product, removeAllOfItemSetter),
+        clearBasket: () => set(() => ({ basket: [] })),
+      };
+    },
     {
       name: 'basket-store',
       storage: createJSONStorage(() => localStorage),
@@ -67,6 +75,10 @@ const removeItemSetter = (product: Product, basket: BasketItem[]) => {
       return basketItem;
     })
     .filter(({ quantity }) => quantity);
+};
+
+const removeAllOfItemSetter = (product: Product, basket: BasketItem[]) => {
+  return basket.filter((basketItem) => basketItem.product.id !== product.id);
 };
 
 export default useBasketStore;
