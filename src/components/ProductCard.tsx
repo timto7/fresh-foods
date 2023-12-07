@@ -2,8 +2,18 @@ import { Link } from 'react-router-dom';
 
 import Product from '../entities/Product';
 import Button from './Button';
+import useBasketStore from '../stores/basket-store';
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const addItem = useBasketStore((s) => s.addItem);
+  const removeItem = useBasketStore((s) => s.removeItem);
+
+  const quantity = useBasketStore(
+    (s) =>
+      s.basket.find((basketItem) => basketItem.product.id === product.id)
+        ?.quantity
+  );
+
   return (
     <div
       style={{
@@ -23,7 +33,9 @@ const ProductCard = ({ product }: { product: Product }) => {
       </div>
       <div>
         <p>£{product.price}</p>
-        <Button>Add</Button>
+        <p>Quantity: {quantity}</p>
+        <Button onClick={() => addItem(product)}>Add</Button>
+        <Button onClick={() => removeItem(product)}>Remove</Button>
       </div>
     </div>
   );
