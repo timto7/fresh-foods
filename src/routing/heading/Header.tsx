@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/FF-Icon.svg';
 import Content from '../../components/Content';
-import Button from '../../components/Button';
+import BasketButton from '../../components/BasketButton';
 
 const Header = () => {
   return (
@@ -47,9 +47,7 @@ const Header = () => {
               </Link>
             </div>
             <div>
-              <Link to="/basket">
-                <Button>Basket</Button>
-              </Link>
+              <BasketButton />
             </div>
           </div>
         </Content>
