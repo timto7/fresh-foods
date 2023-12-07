@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
 import useProducts from '../hooks/useProducts';
+import QuantitySpinner from '../components/QuantitySpinner';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -35,9 +36,10 @@ const ProductDetail = () => {
   return (
     <>
       <ContinueShoppingButton />
-      <h1>{product?.name}</h1>
-      <p>{product?.description}</p>
-      <p>£{product?.price}</p>
+      <h1>{product!.name}</h1>
+      <p>{product!.description}</p>
+      <p>£{product!.price}</p>
+      <QuantitySpinner product={product!} />
     </>
   );
 };
