@@ -4,19 +4,11 @@ import useBasketStore from '../stores/basket-store';
 import Button from './Button';
 
 const BasketButton = () => {
-  const basket = useBasketStore((state) => state.basket);
-
-  const totalCost = basket
-    .reduce(
-      (accumulator, basketItem) =>
-        accumulator + basketItem.product.price * basketItem.quantity,
-      0
-    )
-    .toFixed(2);
+  const totalPrice = useBasketStore((state) => state.totalPrice);
 
   return (
     <Link to="/basket">
-      <Button>Basket: £{totalCost}</Button>
+      <Button>Basket: £{totalPrice}</Button>
     </Link>
   );
 };

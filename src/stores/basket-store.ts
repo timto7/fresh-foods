@@ -10,6 +10,7 @@ interface BasketItem {
 
 interface BasketStore {
   basket: BasketItem[];
+  totalPrice?: string;
   addItem: (product: Product) => void;
   removeItem: (product: Product) => void;
   removeAllOfItem: (product: Product) => void;
@@ -27,7 +28,15 @@ const useBasketStore = create<BasketStore>()(
 
         const updatedBasket = func(product, basket);
 
-        set({ basket: updatedBasket });
+        const newTotalPrice = updatedBasket
+          .reduce(
+            (accumulator, basketItem) =>
+              accumulator + basketItem.product.price * basketItem.quantity,
+            0
+          )
+          .toFixed(2);
+
+        set({ basket: updatedBasket, totalPrice: newTotalPrice });
       };
 
       return {
@@ -36,7 +45,7 @@ const useBasketStore = create<BasketStore>()(
         removeItem: (product) => updateBasket(product, removeItemSetter),
         removeAllOfItem: (product) =>
           updateBasket(product, removeAllOfItemSetter),
-        clearBasket: () => set(() => ({ basket: [] })),
+        clearBasket: () => set(() => ({ basket: [], totalPrice: '0.00' })),
       };
     },
     {
