@@ -3,14 +3,14 @@ import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
-import { useProductsContext } from '../contexts/ProductsContext';
+import useProducts from '../hooks/useProducts';
 
 const ProductDetail = () => {
   const { id } = useParams();
 
   const [notFound, setNotFound] = useState(false);
 
-  const { error, isLoading, products } = useProductsContext();
+  const { data: products, isLoading, error } = useProducts();
 
   const product = useMemo(() => {
     if (!isLoading && products) {

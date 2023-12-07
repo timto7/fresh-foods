@@ -1,8 +1,8 @@
 import ProductCard from '../components/ProductCard';
-import { useProductsContext } from '../contexts/ProductsContext';
+import useProducts from '../hooks/useProducts';
 
 const ProductList = () => {
-  const { error, isLoading, products } = useProductsContext();
+  const { data: products, isLoading, error } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
 
