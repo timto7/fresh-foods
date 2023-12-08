@@ -33,6 +33,10 @@ const SiteTitle = styled.span`
   color: ${(props) => props.theme.colors.text.solid};
   font-size: 24px;
   font-weight: 800;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const Flex = styled.div`

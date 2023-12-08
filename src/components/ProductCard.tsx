@@ -13,6 +13,10 @@ const StyledCard = styled(Card)`
   height: 200px;
   margin-bottom: 10px;
   width: 240px;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const ProductCard = ({ product }: { product: Product }) => {
