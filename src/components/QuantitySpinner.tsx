@@ -39,17 +39,31 @@ const QuantitySpinner = ({
   return (
     <div style={{ alignItems: 'center', display: 'flex' }}>
       <SpinnerButton
+        aria-label={`Decrease ${product.name} quantity to ${quantity - 1}`}
         disabled={basketMode && quantity === 1}
         onClick={() => removeItem(product)}
+        title="Decrease quantity"
       >
         <ButtonIconContainer>
           <LuMinus style={iconStyle} />
         </ButtonIconContainer>
       </SpinnerButton>
-      <Typography style={{ margin: '0 0.8em' }} variant="span">
+      <Typography
+        aria-description={`${product.name} quantity is ${quantity}`}
+        style={{
+          margin: '0 0.8em',
+          minWidth: 20,
+          textAlign: 'center',
+        }}
+        variant="span"
+      >
         {quantity}
       </Typography>
-      <SpinnerButton onClick={() => addItem(product)}>
+      <SpinnerButton
+        aria-label={`Increase ${product.name} quantity to ${quantity + 1}`}
+        onClick={() => addItem(product)}
+        title="Increase quantity"
+      >
         <ButtonIconContainer>
           <LuPlus style={iconStyle} />
         </ButtonIconContainer>

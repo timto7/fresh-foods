@@ -38,6 +38,7 @@ const StyledButton = styled.button<{
   font-weight: 600;
   height: 32px;
   justify-content: center;
+  min-width: 32px;
   outline: 0;
   padding: 0 ${(props) => (props.$variant === 'ghost' ? '0' : '1')}em;
 
@@ -58,7 +59,7 @@ const StyledButton = styled.button<{
   }
 
   &:focus-visible {
-    outline: 2px solid
+    outline: 3px solid
       ${(props) =>
         Color(props.theme.colors.primary).fade(0.5).saturate(0.5).toString()};
     transition: outline 0.1s ease;

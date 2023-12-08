@@ -12,7 +12,7 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 300px;
+  height: 310px;
   margin-bottom: 10px;
   width: 240px;
 
@@ -52,7 +52,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             flexDirection: 'column',
           }}
         >
-          <Price>£{product.price}</Price>
+          <Price style={{ marginBottom: '1em' }}>£{product.price}</Price>
           <QuantitySpinner product={product} />
         </div>
       </div>

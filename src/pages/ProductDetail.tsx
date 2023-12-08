@@ -47,7 +47,7 @@ const ProductDetail = () => {
         <Typography variant="heading">{product.name}</Typography>
         <Image />
         <Typography>{product.description}</Typography>
-        <Price>£{product.price}</Price>
+        <Price style={{ marginBottom: '1em' }}>£{product.price}</Price>
         <QuantitySpinner product={product} />
       </Card>
     </>

@@ -12,7 +12,7 @@ const light: DefaultTheme = {
     text: {
       inverted: '#ffffff',
       main: '#061c3d',
-      soft: '#596069',
+      soft: '#4b5158',
       solid: '#000000',
     },
   },

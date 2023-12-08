@@ -9,7 +9,11 @@ const BasketButton = () => {
 
   return (
     <Link to="/basket" style={{ textDecoration: 'none' }}>
-      <Button startIcon={<LuShoppingBasket />} variant="outlined">
+      <Button
+        startIcon={<LuShoppingBasket />}
+        title="Go to Basket"
+        variant="outlined"
+      >
         Basket: £{totalPrice}
       </Button>
     </Link>

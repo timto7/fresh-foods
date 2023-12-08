@@ -13,6 +13,7 @@ const ColorModeButton = () => {
     <Button
       onClick={() => toggleMode()}
       style={{ margin: '0 1em' }}
+      title={`Switch to ${currentMode === 'light' ? 'dark' : 'light'} mode`}
       variant="ghost"
     >
       <ButtonIconContainer>
