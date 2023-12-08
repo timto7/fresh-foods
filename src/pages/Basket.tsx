@@ -4,6 +4,7 @@ import BasketItem from '../components/BasketItem';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
+import Typography from '../components/Typography';
 import useBasketStore from '../stores/basket-store';
 
 const BuyBox = () => {
@@ -13,7 +14,9 @@ const BuyBox = () => {
   return (
     <div>
       <Card>
-        <p>Total: £{totalPrice}</p>
+        <Typography style={{ fontSize: 18, marginTop: 0 }}>
+          Total: £{totalPrice}
+        </Typography>
         {basket.length > 0 && <Button>Proceed to Checkout</Button>}
       </Card>
     </div>
@@ -26,7 +29,7 @@ const BasketList = () => {
 
   return (
     <Card>
-      <h1>Shopping Basket</h1>
+      <Typography variant="heading">Shopping Basket</Typography>
       {basket.length > 0 ? (
         <Button
           onClick={() => clearBasket()}

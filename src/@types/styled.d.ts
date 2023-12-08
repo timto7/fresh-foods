@@ -4,6 +4,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: string;
+      divider: string;
       primary: string;
       surface: string;
       text: {
@@ -18,7 +19,7 @@ declare module 'styled-components' {
       surface: string;
     };
     shadows: {
-      card: string;
+      surface: string;
     };
   }
 }

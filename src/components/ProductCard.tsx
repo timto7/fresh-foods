@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Product from '../entities/Product';
 import QuantitySpinner from './QuantitySpinner';
 import Card from './Card';
 import Price from './Price';
+import ProductTitle from './ProductTitle';
 
 const StyledCard = styled(Card)`
   display: flex;
@@ -19,7 +19,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <StyledCard>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Link to={`/product/${product.id}`}>{product.name}</Link>
+        <ProductTitle product={product} />
       </div>
       <div>
         <div

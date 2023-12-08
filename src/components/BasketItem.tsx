@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Product from '../entities/Product';
 import useBasketStore from '../stores/basket-store';
 import Button from './Button';
-import QuantitySpinner from './QuantitySpinner';
 import Price from './Price';
+import ProductTitle from './ProductTitle';
+import QuantitySpinner from './QuantitySpinner';
 
 interface BasketItemProps {
   product: Product;
 }
 
 const ListItem = styled.li`
-  border-bottom: 1px solid ${(props) => props.theme.colors.text.soft};
+  border-bottom: 1px solid ${(props) => props.theme.colors.divider};
   padding-bottom: 1em;
   margin: 1em 0;
 
@@ -28,7 +28,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
   return (
     <ListItem>
       <div>
-        <Link to={`/product/${product.id}`}>{product.name}</Link>
+        <ProductTitle product={product} />
         <Price>£{product.price}</Price>
         <div style={{ display: 'flex' }}>
           <QuantitySpinner basketMode product={product} />

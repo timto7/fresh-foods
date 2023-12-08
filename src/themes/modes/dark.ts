@@ -6,8 +6,9 @@ const dark: DefaultTheme = {
   ...common,
   colors: {
     background: '#0c1425',
-    primary: '#2dd4bf',
-    surface: '#0f172a',
+    divider: '#55555577',
+    primary: '#38bdf8',
+    surface: '#10192d',
     text: {
       inverted: '#000000',
       main: '#ffffff',
@@ -16,7 +17,8 @@ const dark: DefaultTheme = {
     },
   },
   shadows: {
-    card: `0px 0.6px 0.6px rgba(0, 0, 0, 0.06),
+    surface: `0px 0px 1px rgba(255, 255, 255, 0.3),
+    0px 0.6px 0.6px rgba(0, 0, 0, 0.06),
     0px 1.3px 1.3px rgba(0, 0, 0, 0.043),
     0px 2.5px 2.5px rgba(0, 0, 0, 0.036),
     0px 4.5px 4.5px rgba(0, 0, 0, 0.03),

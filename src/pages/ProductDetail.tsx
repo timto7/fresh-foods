@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom';
 
 import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
+import Price from '../components/Price';
 import QuantitySpinner from '../components/QuantitySpinner';
 import useProducts from '../hooks/useProducts';
+import Typography from '../components/Typography';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -28,11 +30,12 @@ const ProductDetail = () => {
     }
   }, [id, isLoading, products]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Typography>Loading...</Typography>;
 
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <Typography>Error: {error.message}</Typography>;
 
-  if (notFound) return <p>The requested product does not exist.</p>;
+  if (notFound)
+    return <Typography>The requested product does not exist.</Typography>;
 
   if (!product) return null;
 
@@ -40,9 +43,9 @@ const ProductDetail = () => {
     <>
       <ContinueShoppingButton />
       <Card>
-        <h1>{product.name}</h1>
-        <p>{product.description}</p>
-        <p>£{product.price}</p>
+        <Typography variant="heading">{product.name}</Typography>
+        <Typography>{product.description}</Typography>
+        <Price>£{product.price}</Price>
         <QuantitySpinner product={product} />
       </Card>
     </>

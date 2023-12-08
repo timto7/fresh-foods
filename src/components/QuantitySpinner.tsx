@@ -1,10 +1,11 @@
 import { LuMinus, LuPlus } from 'react-icons/lu';
 import styled from 'styled-components';
 
-import Button from './Button';
 import Product from '../entities/Product';
 import useBasketStore from '../stores/basket-store';
+import Button from './Button';
 import ButtonIconContainer from './ButtonIconContainer';
+import Typography from './Typography';
 
 interface QuantitySpinnerProps {
   basketMode?: boolean;
@@ -45,7 +46,9 @@ const QuantitySpinner = ({
           <LuMinus style={iconStyle} />
         </ButtonIconContainer>
       </SpinnerButton>
-      <span style={{ margin: '0 0.8em' }}>{quantity}</span>
+      <Typography style={{ margin: '0 0.8em' }} variant="span">
+        {quantity}
+      </Typography>
       <SpinnerButton onClick={() => addItem(product)}>
         <ButtonIconContainer>
           <LuPlus style={iconStyle} />
