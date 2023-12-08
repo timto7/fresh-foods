@@ -38,10 +38,9 @@ const Header = () => {
                       color: 'black',
                       fontSize: 28,
                       fontWeight: 800,
-                      paddingTop: '0.25em',
                     }}
                   >
-                    Fresh Food
+                    Fresh Foods
                   </span>
                 </div>
               </Link>

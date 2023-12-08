@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import Error from '../pages/Error';
-import Layout from './Layout';
+import Layout from './components/Layout';
 import ProductList from '../pages/ProductList';
 import Basket from '../pages/Basket';
 import ProductDetail from '../pages/ProductDetail';
