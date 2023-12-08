@@ -41,6 +41,7 @@ const useBasketStore = create<BasketStore>()(
 
       return {
         basket: [],
+        totalPrice: '0.00',
         addItem: (product) => updateBasket(product, addItemSetter),
         removeItem: (product) => updateBasket(product, removeItemSetter),
         removeAllOfItem: (product) =>

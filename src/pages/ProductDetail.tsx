@@ -8,6 +8,7 @@ import Price from '../components/Price';
 import QuantitySpinner from '../components/QuantitySpinner';
 import useProducts from '../hooks/useProducts';
 import Typography from '../components/Typography';
+import Image from '../components/Image';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -44,6 +45,7 @@ const ProductDetail = () => {
       <ContinueShoppingButton />
       <Card>
         <Typography variant="heading">{product.name}</Typography>
+        <Image />
         <Typography>{product.description}</Typography>
         <Price>£{product.price}</Price>
         <QuantitySpinner product={product} />
