@@ -5,15 +5,15 @@ import Product from '../entities/Product';
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+
+  &:hover span {
+    text-decoration: underline;
+  }
 `;
 
 const Title = styled.span`
   color: ${(props) => props.theme.colors.text.main};
   font-weight: 500;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 interface ProductTitleProps {

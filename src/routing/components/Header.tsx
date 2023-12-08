@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import logo from '../../assets/FF-Icon.svg';
+import darkLogo from '../../assets/FF-Icon_Dark.svg';
+import lightLogo from '../../assets/FF-Icon_Light.svg';
 import BasketButton from '../../components/BasketButton';
 import ColorModeButton from '../../components/ColorModeButton';
 import Content from '../../components/Content';
+import useThemeContext from '../../hooks/useThemeContext';
 
 const NavContainer = styled.div`
   height: 60px;
@@ -39,6 +41,8 @@ const Flex = styled.div`
 `;
 
 const Header = () => {
+  const { currentMode } = useThemeContext();
+
   return (
     <NavContainer>
       <Nav>
@@ -48,7 +52,7 @@ const Header = () => {
               <Link to="/" style={{ textDecoration: 'none' }}>
                 <Flex>
                   <img
-                    src={logo}
+                    src={currentMode === 'dark' ? darkLogo : lightLogo}
                     height={40}
                     width={40}
                     style={{ marginRight: '1em' }}

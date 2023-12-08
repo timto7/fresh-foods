@@ -12,7 +12,7 @@ const StyledCard = styled(Card)`
   justify-content: space-between;
   height: 200px;
   margin-bottom: 10px;
-  width: 200px;
+  width: 240px;
 `;
 
 const ProductCard = ({ product }: { product: Product }) => {
