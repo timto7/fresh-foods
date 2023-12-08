@@ -22,6 +22,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
           <Button
             onClick={() => removeAllOfItem(product)}
             style={{ marginLeft: '1em' }}
+            variant="ghost"
           >
             Remove
           </Button>

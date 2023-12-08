@@ -1,3 +1,5 @@
+import { LuTrash2 } from 'react-icons/lu';
+
 import BasketItem from '../components/BasketItem';
 import Button from '../components/Button';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
@@ -23,7 +25,13 @@ const BasketList = () => {
     <div>
       <h1>Shopping Basket</h1>
       {basket.length > 0 ? (
-        <Button onClick={() => clearBasket()}>Clear the Basket</Button>
+        <Button
+          onClick={() => clearBasket()}
+          startIcon={<LuTrash2 />}
+          variant="ghost"
+        >
+          Clear the Basket
+        </Button>
       ) : (
         <p>There are no items in the basket.</p>
       )}
