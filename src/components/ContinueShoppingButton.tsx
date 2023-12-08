@@ -10,6 +10,7 @@ const ContinueShoppingButton = () => {
     <Button
       onClick={() => navigate('/')}
       startIcon={<LuArrowLeft />}
+      style={{ marginBottom: '1em' }}
       variant="outlined"
     >
       Continue Shopping

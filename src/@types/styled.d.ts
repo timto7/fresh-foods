@@ -17,5 +17,8 @@ declare module 'styled-components' {
       button: string;
       surface: string;
     };
+    shadows: {
+      card: string;
+    };
   }
 }

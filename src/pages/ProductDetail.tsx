@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
 import QuantitySpinner from '../components/QuantitySpinner';
 import useProducts from '../hooks/useProducts';
@@ -38,10 +39,12 @@ const ProductDetail = () => {
   return (
     <>
       <ContinueShoppingButton />
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>£{product.price}</p>
-      <QuantitySpinner product={product} />
+      <Card>
+        <h1>{product.name}</h1>
+        <p>{product.description}</p>
+        <p>£{product.price}</p>
+        <QuantitySpinner product={product} />
+      </Card>
     </>
   );
 };

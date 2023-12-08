@@ -1,22 +1,35 @@
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import Product from '../entities/Product';
 import useBasketStore from '../stores/basket-store';
 import Button from './Button';
 import QuantitySpinner from './QuantitySpinner';
+import Price from './Price';
 
 interface BasketItemProps {
   product: Product;
 }
 
+const ListItem = styled.li`
+  border-bottom: 1px solid ${(props) => props.theme.colors.text.soft};
+  padding-bottom: 1em;
+  margin: 1em 0;
+
+  &:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+`;
+
 const BasketItem = ({ product }: BasketItemProps) => {
   const removeAllOfItem = useBasketStore((state) => state.removeAllOfItem);
 
   return (
-    <li style={{ margin: '1em 0' }}>
+    <ListItem>
       <div>
         <Link to={`/product/${product.id}`}>{product.name}</Link>
-        <span style={{ display: 'block' }}>£{product.price}</span>
+        <Price>£{product.price}</Price>
         <div style={{ display: 'flex' }}>
           <QuantitySpinner basketMode product={product} />
           <Button
@@ -28,7 +41,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
           </Button>
         </div>
       </div>
-    </li>
+    </ListItem>
   );
 };
 

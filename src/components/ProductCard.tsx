@@ -1,31 +1,39 @@
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import Product from '../entities/Product';
 import QuantitySpinner from './QuantitySpinner';
+import Card from './Card';
+import Price from './Price';
+
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  margin-bottom: 10px;
+  width: 200px;
+`;
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div
-      style={{
-        border: '1px solid black',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexDirection: 'column',
-        height: 200,
-        justifyContent: 'space-between',
-        marginBottom: '10px',
-        padding: '1em',
-        width: 200,
-      }}
-    >
+    <StyledCard>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Link to={`/product/${product.id}`}>{product.name}</Link>
       </div>
       <div>
-        <p>£{product.price}</p>
-        <QuantitySpinner product={product} />
+        <div
+          style={{
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <Price>£{product.price}</Price>
+          <QuantitySpinner product={product} />
+        </div>
       </div>
-    </div>
+    </StyledCard>
   );
 };
 

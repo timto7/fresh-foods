@@ -2,6 +2,7 @@ import { LuTrash2 } from 'react-icons/lu';
 
 import BasketItem from '../components/BasketItem';
 import Button from '../components/Button';
+import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
 import useBasketStore from '../stores/basket-store';
 
@@ -11,8 +12,10 @@ const BuyBox = () => {
 
   return (
     <div>
-      <p>Total: £{totalPrice}</p>
-      {basket.length > 0 && <Button>Proceed to Checkout</Button>}
+      <Card>
+        <p>Total: £{totalPrice}</p>
+        {basket.length > 0 && <Button>Proceed to Checkout</Button>}
+      </Card>
     </div>
   );
 };
@@ -22,7 +25,7 @@ const BasketList = () => {
   const clearBasket = useBasketStore((state) => state.clearBasket);
 
   return (
-    <div>
+    <Card>
       <h1>Shopping Basket</h1>
       {basket.length > 0 ? (
         <Button
@@ -43,7 +46,7 @@ const BasketList = () => {
           />
         ))}
       </ul>
-    </div>
+    </Card>
   );
 };
 
@@ -51,7 +54,9 @@ const Basket = () => {
   return (
     <>
       <ContinueShoppingButton />
-      <div style={{ display: 'grid', gridTemplateColumns: 'auto 200px' }}>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: 'auto 200px', gap: 20 }}
+      >
         <BasketList />
         <BuyBox />
       </div>
