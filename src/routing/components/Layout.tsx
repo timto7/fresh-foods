@@ -11,6 +11,10 @@ const MasterContainer = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    transition: color .1s ease, background-color .1s ease;
+  }
+
   body {
     background: ${(props) => props.theme.colors.background};
   }

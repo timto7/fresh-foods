@@ -14,6 +14,7 @@ declare module 'styled-components' {
         solid: string;
       };
     };
+    mode: 'dark' | 'light';
     radii: {
       button: string;
       surface: string;

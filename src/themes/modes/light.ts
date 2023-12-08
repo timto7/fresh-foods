@@ -12,10 +12,11 @@ const light: DefaultTheme = {
     text: {
       inverted: '#ffffff',
       main: '#061c3d',
-      soft: '#626973',
+      soft: '#596069',
       solid: '#000000',
     },
   },
+  mode: 'light',
   shadows: {
     surface: `0px 0px 1px rgba(0, 0, 0, 0.3),
     0px 0.6px 0.6px rgba(0, 0, 0, 0.06),

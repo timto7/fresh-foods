@@ -17,7 +17,9 @@ const BuyBox = () => {
         <Typography style={{ fontSize: 18, marginTop: 0 }}>
           Total: £{totalPrice}
         </Typography>
-        {basket.length > 0 && <Button>Proceed to Checkout</Button>}
+        {basket.length > 0 && (
+          <Button style={{ width: '100%' }}>Proceed to Checkout</Button>
+        )}
       </Card>
     </div>
   );
@@ -39,7 +41,7 @@ const BasketList = () => {
           Clear the Basket
         </Button>
       ) : (
-        <p>There are no items in the basket.</p>
+        <Typography>There are no items in the basket.</Typography>
       )}
       <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
         {basket.map((basketItem) => (

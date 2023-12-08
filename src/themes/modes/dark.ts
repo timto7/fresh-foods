@@ -12,12 +12,13 @@ const dark: DefaultTheme = {
     text: {
       inverted: '#000000',
       main: '#ffffff',
-      soft: '#90949e',
+      soft: '#a8abb3',
       solid: '#ffffff',
     },
   },
+  mode: 'dark',
   shadows: {
-    surface: `0px 0px 1px rgba(255, 255, 255, 0.3),
+    surface: `0px 0px 1px rgba(255, 255, 255, 0.35),
     0px 0.6px 0.6px rgba(0, 0, 0, 0.06),
     0px 1.3px 1.3px rgba(0, 0, 0, 0.043),
     0px 2.5px 2.5px rgba(0, 0, 0, 0.036),

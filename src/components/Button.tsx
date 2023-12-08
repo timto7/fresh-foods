@@ -1,4 +1,7 @@
+/* eslint-disable no-unexpected-multiline */
 import { ReactNode } from 'react';
+
+import Color from 'color';
 import styled from 'styled-components';
 
 import ButtonIconContainer from './ButtonIconContainer';
@@ -35,6 +38,29 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   outline: 0;
   padding: 0 ${(props) => (props.variant === 'ghost' ? '0' : '1')}em;
+
+  &:hover {
+    background-color: ${(props) => {
+      if (props.variant === 'solid') {
+        return Color(props.theme.colors.primary)
+          [props.theme.mode === 'dark' ? 'lighten' : 'darken'](0.15)
+          .toString();
+      }
+
+      if (props.variant === 'outlined') {
+        return Color(props.theme.colors.primary).fade(0.95).toString();
+      }
+
+      return 'transparent';
+    }};
+  }
+
+  &:focus-visible {
+    outline: 2px solid
+      ${(props) =>
+        Color(props.theme.colors.primary).fade(0.5).saturate(0.5).toString()};
+    transition: outline 0.1s ease;
+  }
 `;
 
 const Button = ({
