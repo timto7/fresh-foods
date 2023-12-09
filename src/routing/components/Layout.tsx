@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Content from '../../components/Content';
@@ -30,6 +30,7 @@ const Layout = () => {
         </main>
       </Content>
       <GlobalStyle />
+      <ScrollRestoration />
     </MasterContainer>
   );
 };

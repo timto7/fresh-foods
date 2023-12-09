@@ -34,7 +34,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
           <QuantitySpinner basketMode product={product} />
           <Button
             onClick={() => removeAllOfItem(product)}
-            style={{ marginLeft: '1em' }}
+            style={{ marginLeft: '1.5em' }}
             variant="ghost"
           >
             Remove

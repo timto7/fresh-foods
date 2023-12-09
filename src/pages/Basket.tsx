@@ -7,6 +7,7 @@ import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
 import Typography from '../components/Typography';
 import useBasketStore from '../stores/basket-store';
+import { useEffect } from 'react';
 
 const BasketLayout = styled.div`
   display: grid;
@@ -19,6 +20,10 @@ const BasketLayout = styled.div`
 `;
 
 const BuyBox = () => {
+  useEffect(() => {
+    document.title = 'Basket';
+  }, []);
+
   const basket = useBasketStore((state) => state.basket);
   const totalPrice = useBasketStore((state) => state.totalPrice);
 

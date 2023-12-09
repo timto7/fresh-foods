@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import styled from 'styled-components';
 
 import ProductCard from '../components/ProductCard';
@@ -17,6 +19,10 @@ const ProductGrid = styled.div`
 `;
 
 const ProductList = () => {
+  useEffect(() => {
+    document.title = 'Products';
+  }, []);
+
   const { data: products, isLoading, error } = useProducts();
 
   if (isLoading) return <Typography>Loading...</Typography>;
@@ -24,11 +30,13 @@ const ProductList = () => {
   if (error) return <Typography>Error: {error.message}</Typography>;
 
   return (
-    <ProductGrid>
-      {products?.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </ProductGrid>
+    <>
+      <ProductGrid>
+        {products?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ProductGrid>
+    </>
   );
 };
 

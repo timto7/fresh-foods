@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
@@ -30,6 +30,16 @@ const ProductDetail = () => {
       return foundProduct;
     }
   }, [id, isLoading, products]);
+
+  useEffect(() => {
+    let title = 'Fresh Foods';
+
+    if (product) {
+      title = product.name;
+    }
+
+    document.title = title;
+  }, [product]);
 
   if (isLoading) return <Typography>Loading...</Typography>;
 
