@@ -6,6 +6,9 @@ import styled from 'styled-components';
 
 import ButtonIconContainer from './ButtonIconContainer';
 
+const disabliseColor = (color: string, disabled: boolean) =>
+  disabled ? Color(color).grayscale().fade(0.5).toString() : color;
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   endIcon?: ReactNode;
   startIcon?: ReactNode;
@@ -17,13 +20,20 @@ const StyledButton = styled.button<{
 }>`
   align-items: center;
   background-color: ${(props) => {
-    if (props.$variant === 'solid') return props.theme.colors.primary;
+    if (props.$variant === 'solid')
+      return disabliseColor(
+        props.theme.colors.primary,
+        props.disabled || false
+      );
 
     return 'transparent';
   }};
   border: ${(props) => {
     if (props.$variant === 'outlined')
-      return `1px solid ${props.theme.colors.primary}`;
+      return `1px solid ${disabliseColor(
+        props.theme.colors.primary,
+        props.disabled || false
+      )}`;
 
     return 0;
   }};
@@ -31,9 +41,9 @@ const StyledButton = styled.button<{
   color: ${(props) => {
     if (props.$variant === 'solid') return props.theme.colors.text.inverted;
 
-    return props.theme.colors.primary;
+    return disabliseColor(props.theme.colors.primary, props.disabled || false);
   }};
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   display: flex;
   font-weight: 600;
   height: 32px;
@@ -42,7 +52,7 @@ const StyledButton = styled.button<{
   outline: 0;
   padding: 0 ${(props) => (props.$variant === 'ghost' ? '0' : '1')}em;
 
-  &:hover {
+  &:hover:enabled {
     background-color: ${(props) => {
       if (props.$variant === 'solid') {
         return Color(props.theme.colors.primary)
