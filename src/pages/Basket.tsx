@@ -10,8 +10,8 @@ import useBasketStore from '../stores/basket-store';
 
 const BasketLayout = styled.div`
   display: grid;
-  grid-template-columns: auto 240px;
   gap: 20px;
+  grid-template-columns: auto 240px;
 
   @media (max-width: 640px) {
     grid-template-columns: 1fr;

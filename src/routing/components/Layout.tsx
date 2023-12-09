@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import Header from './Header';
+import Header from './header/Header';
 import Content from '../../components/Content';
 
 const MasterContainer = styled.div`

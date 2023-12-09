@@ -1,8 +1,8 @@
 import { LuShoppingBasket } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
-import useBasketStore from '../../stores/basket-store';
-import Button from '../../components/Button';
+import useBasketStore from '../../../stores/basket-store';
+import Button from '../../../components/Button';
 
 const BasketButton = () => {
   const totalPrice = useBasketStore((state) => state.totalPrice);

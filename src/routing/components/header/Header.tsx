@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import darkLogo from '../../assets/FF-Icon_Dark.svg';
-import lightLogo from '../../assets/FF-Icon_Light.svg';
+import darkLogo from '../../../assets/FF-Icon_Dark.svg';
+import lightLogo from '../../../assets/FF-Icon_Light.svg';
 import BasketButton from './BasketButton';
 import ColorModeButton from './ColorModeButton';
-import Content from '../../components/Content';
-import useThemeContext from '../../hooks/useThemeContext';
+import Content from '../../../components/Content';
+import useThemeContext from '../../../hooks/useThemeContext';
 
 const NavContainer = styled.div`
   height: 60px;
@@ -57,9 +57,9 @@ const Header = () => {
                 <Flex>
                   <img
                     src={currentMode === 'dark' ? darkLogo : lightLogo}
+                    style={{ marginRight: '1em' }}
                     height={40}
                     width={40}
-                    style={{ marginRight: '1em' }}
                   />
                   <SiteTitle>Fresh Foods</SiteTitle>
                 </Flex>
