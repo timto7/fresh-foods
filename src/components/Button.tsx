@@ -74,7 +74,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <StyledButton $variant={variant} {...props}>
+    <StyledButton type="button" $variant={variant} {...props}>
       {startIcon && (
         <ButtonIconContainer $position="start">{startIcon}</ButtonIconContainer>
       )}
