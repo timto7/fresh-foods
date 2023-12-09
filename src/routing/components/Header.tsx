@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import darkLogo from '../../assets/FF-Icon_Dark.svg';
 import lightLogo from '../../assets/FF-Icon_Light.svg';
-import BasketButton from '../../components/BasketButton';
-import ColorModeButton from '../../components/ColorModeButton';
+import BasketButton from './BasketButton';
+import ColorModeButton from './ColorModeButton';
 import Content from '../../components/Content';
 import useThemeContext from '../../hooks/useThemeContext';
 

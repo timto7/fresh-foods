@@ -1,8 +1,8 @@
 import { LuMoon, LuSun } from 'react-icons/lu';
 
-import useThemeContext from '../hooks/useThemeContext';
-import Button from './Button';
-import ButtonIconContainer from './ButtonIconContainer';
+import useThemeContext from '../../hooks/useThemeContext';
+import Button from '../../components/Button';
+import ButtonIconContainer from '../../components/ButtonIconContainer';
 
 const iconStyle = { fontSize: 20 };
 
