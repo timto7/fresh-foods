@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import darkLogo from '../../../assets/FF-Icon_Dark.svg';
 import lightLogo from '../../../assets/FF-Icon_Light.svg';
-import BasketButton from './BasketButton';
-import ColorModeButton from './ColorModeButton';
 import Content from '../../../components/Content';
 import useThemeContext from '../../../hooks/useThemeContext';
+import BasketButton from './BasketButton';
+import ColorModeButton from './ColorModeButton';
 
 const NavContainer = styled.div`
   height: 60px;

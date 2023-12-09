@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import Header from './header/Header';
 import Content from '../../components/Content';
+import Header from './header/Header';
 
 const MasterContainer = styled.div`
   background-color: ${(props) => props.theme.colors.background};

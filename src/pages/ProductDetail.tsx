@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 
 import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
+import Image from '../components/Image';
 import Price from '../components/Price';
 import QuantitySpinner from '../components/QuantitySpinner';
-import useProducts from '../hooks/useProducts';
 import Typography from '../components/Typography';
-import Image from '../components/Image';
+import useProducts from '../hooks/useProducts';
 
 const ProductDetail = () => {
   const { id } = useParams();
