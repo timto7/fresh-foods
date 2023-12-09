@@ -51,6 +51,7 @@ const StyledButton = styled.button<{
   min-width: 32px;
   outline: 0;
   padding: 0 ${(props) => (props.$variant === 'ghost' ? '0' : '1')}em;
+  transition: transform 0.1s ease;
 
   &:hover:enabled {
     background-color: ${(props) => {
@@ -66,6 +67,16 @@ const StyledButton = styled.button<{
 
       return 'transparent';
     }};
+    color: ${(props) => {
+      if (props.$variant === 'solid') return props.theme.colors.text.inverted;
+
+      if (props.$variant === 'ghost')
+        return Color(props.theme.colors.primary)
+          [props.theme.mode === 'dark' ? 'lighten' : 'darken'](0.15)
+          .toString();
+
+      return props.theme.colors.primary;
+    }};
   }
 
   &:focus-visible {
@@ -73,6 +84,10 @@ const StyledButton = styled.button<{
       ${(props) =>
         Color(props.theme.colors.primary).fade(0.5).saturate(0.5).toString()};
     transition: outline 0.1s ease;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 `;
 

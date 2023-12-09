@@ -9,7 +9,6 @@ const ImageContainer = styled.div`
   display: flex;
   height: 140px;
   justify-content: center;
-  margin-bottom: 1em;
   max-width: 240px;
   width: 100%;
 `;

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Product from '../entities/Product';
@@ -7,6 +6,7 @@ import Image from './Image';
 import Price from './Price';
 import ProductTitle from './ProductTitle';
 import QuantitySpinner from './QuantitySpinner';
+import StyledLink from './StyledLink';
 
 const StyledCard = styled(Card)`
   display: flex;
@@ -36,12 +36,17 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <StyledCard>
       <CardHeader>
-        <Link
+        <StyledLink
           to={`/product/${product.id}`}
-          style={{ justifyContent: 'center', display: 'flex', width: ' 100%' }}
+          style={{
+            justifyContent: 'center',
+            display: 'flex',
+            marginBottom: '1em',
+            width: ' 100%',
+          }}
         >
           <Image />
-        </Link>
+        </StyledLink>
         <ProductTitle product={product} />
       </CardHeader>
       <div>

@@ -1,15 +1,7 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Product from '../entities/Product';
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-
-  &:hover span {
-    text-decoration: underline;
-  }
-`;
+import StyledLink from './StyledLink';
 
 const Title = styled.span`
   color: ${(props) => props.theme.colors.text.main};
