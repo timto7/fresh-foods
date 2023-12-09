@@ -6,7 +6,7 @@ const Content = ({ children }: PropsWithChildren) => {
       style={{
         marginLeft: 'auto',
         marginRight: 'auto',
-        maxWidth: 1280,
+        maxWidth: 1366,
         padding: '0 1em',
       }}
     >
