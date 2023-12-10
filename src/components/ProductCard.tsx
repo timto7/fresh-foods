@@ -37,6 +37,7 @@ const CardHeader = styled.div`
   }
 `;
 
+// Used to display a single product in the ProductList
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <StyledCard>

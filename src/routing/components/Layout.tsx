@@ -28,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// This component ensures the site background is in keeping with the theme
+// and applies the header to the current page content.
 const Layout = () => {
   return (
     <MasterContainer>

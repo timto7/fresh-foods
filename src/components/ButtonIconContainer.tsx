@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Allows better position of icon adornments
 const ButtonIconContainer = styled.div<{
   $position?: 'center' | 'end' | 'start';
 }>`

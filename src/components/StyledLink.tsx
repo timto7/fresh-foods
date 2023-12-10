@@ -2,6 +2,7 @@ import Color from 'color';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Used for styling links consistently
 const StyledLink = styled(Link)`
   border-radius: ${(props) => props.theme.radii.button};
   text-decoration: none;

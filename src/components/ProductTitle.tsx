@@ -15,6 +15,7 @@ interface ProductTitleProps {
   product: Product;
 }
 
+// A linked title used throughout the app
 const ProductTitle = ({ product }: ProductTitleProps) => {
   return (
     <StyledLink

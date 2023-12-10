@@ -17,6 +17,7 @@ const ProductDetail = () => {
 
   const { data: products, isLoading, error } = useProducts();
 
+  // Get the product with an id matching the given id param
   const product = useMemo(() => {
     if (!isLoading && products) {
       const foundProduct = products.find(

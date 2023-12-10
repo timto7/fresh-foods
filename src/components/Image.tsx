@@ -1,6 +1,8 @@
 import { LuFileImage } from 'react-icons/lu';
 import styled from 'styled-components';
 
+// A placeholder for a product image
+// Would source real images if supplied by backend
 const ImageContainer = styled.div`
   align-items: center;
   background-color: #77777712;

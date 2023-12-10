@@ -19,6 +19,8 @@ const SpinnerButton = styled(Button)`
   width: 32px;
 `;
 
+// Used to add/remove a specific item from the basket.
+// Basket mode doesn't allow the quantity to go below 1 without clicking "Remove"
 const QuantitySpinner = ({
   basketMode = false,
   product,

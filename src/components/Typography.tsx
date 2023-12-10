@@ -3,6 +3,7 @@ import { PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 
 interface TypographyProps extends PropsWithChildren {
+  style?: object;
   variant?: 'body' | 'heading' | 'span';
 }
 
@@ -18,6 +19,7 @@ const Span = styled.span`
   color: ${(props) => props.theme.colors.text.main};
 `;
 
+// Ensures consistent application of theme text color and sizing
 const Typography = ({
   children,
   variant = 'body',

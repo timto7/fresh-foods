@@ -10,6 +10,8 @@ const fetchProducts = () =>
     )
     .then((response) => response.data);
 
+// This hook uses React Query to request data via Axios.
+// The data is cached and becomes the source of truth for product state.
 const useProducts = () => {
   return useQuery<Product[]>({
     queryKey: ['products'],

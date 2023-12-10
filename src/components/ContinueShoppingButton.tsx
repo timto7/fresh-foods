@@ -3,6 +3,7 @@ import Button from './Button';
 import { LuArrowLeft } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 
+// Common back button
 const ContinueShoppingButton = () => {
   const navigate = useNavigate();
 

@@ -22,6 +22,7 @@ const ListItem = styled.li`
   }
 `;
 
+// A single list item for display and editing a basket item
 const BasketItem = ({ product }: BasketItemProps) => {
   const removeAllOfItem = useBasketStore((state) => state.removeAllOfItem);
 

@@ -91,6 +91,7 @@ const StyledButton = styled.button<{
   }
 `;
 
+// Reusable button for use throughout the app
 const Button = ({
   children,
   endIcon,

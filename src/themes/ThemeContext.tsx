@@ -22,6 +22,8 @@ export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 );
 
+// Contains current theme and mode state which is persisted via
+// local storage. Also invokes the styled-components provider.
 export const ThemeContextProvider = ({ children }: PropsWithChildren) => {
   const [currentMode, setCurrentMode] = useState<'light' | 'dark'>(
     localStorage.getItem(LOCAL_STORAGE_KEY) === 'dark' ? 'dark' : 'light'

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Used for styling a price consistently
 const Price = styled.span`
   color: ${(props) => props.theme.colors.text.soft};
   display: block;
