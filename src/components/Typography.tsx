@@ -3,7 +3,6 @@ import { PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 
 interface TypographyProps extends PropsWithChildren {
-  style?: object;
   variant?: 'body' | 'heading' | 'span';
 }
 
@@ -19,7 +18,11 @@ const Span = styled.span`
   color: ${(props) => props.theme.colors.text.main};
 `;
 
-const Typography = ({ children, style, variant = 'body' }: TypographyProps) => {
+const Typography = ({
+  children,
+  variant = 'body',
+  ...props
+}: TypographyProps) => {
   const Component = useMemo(() => {
     switch (variant) {
       case 'heading':
@@ -33,7 +36,7 @@ const Typography = ({ children, style, variant = 'body' }: TypographyProps) => {
     }
   }, [variant]);
 
-  return <Component style={style}>{children}</Component>;
+  return <Component {...props}>{children}</Component>;
 };
 
 export default Typography;

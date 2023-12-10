@@ -6,7 +6,7 @@ const dark: DefaultTheme = {
   ...common,
   colors: {
     background: '#0c1425',
-    divider: '#55555577',
+    divider: '#55559944',
     primary: '#38bdf8',
     surface: '#10192d',
     text: {
@@ -18,7 +18,7 @@ const dark: DefaultTheme = {
   },
   mode: 'dark',
   shadows: {
-    surface: `0px 0px 1px rgba(255, 255, 255, 0.35),
+    surface: `0px 0px 1px #555599ff,
     0px 0.6px 0.6px rgba(0, 0, 0, 0.06),
     0px 1.3px 1.3px rgba(0, 0, 0, 0.043),
     0px 2.5px 2.5px rgba(0, 0, 0, 0.036),

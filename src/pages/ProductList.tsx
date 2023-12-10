@@ -8,10 +8,11 @@ import useProducts from '../hooks/useProducts';
 
 const ProductGrid = styled.div`
   display: grid;
-  gap: 20px;
+  gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   width: 100%;
+  margin-bottom: -1em;
 
   @media (max-width: 640px) {
     grid-template-columns: 1fr;

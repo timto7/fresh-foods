@@ -1,3 +1,5 @@
+import { useEffect, useMemo } from 'react';
+
 import { LuTrash2 } from 'react-icons/lu';
 import styled from 'styled-components';
 
@@ -7,16 +9,32 @@ import Card from '../components/Card';
 import ContinueShoppingButton from '../components/ContinueShoppingButton';
 import Typography from '../components/Typography';
 import useBasketStore from '../stores/basket-store';
-import { useEffect } from 'react';
 
 const BasketLayout = styled.div`
   display: grid;
-  gap: 20px;
+  gap: 1em;
   grid-template-columns: auto 240px;
 
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
+`;
+
+const BuyBoxCard = styled(Card)`
+  position: fixed;
+  width: 240px;
+
+  @media (max-width: 640px) {
+    position: relative;
+    width: 100%;
+  }
+`;
+
+const PriceTypography = styled(Typography)`
+  color: ${(props) => props.theme.colors.text.solid};
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
 `;
 
 const BuyBox = () => {
@@ -27,18 +45,24 @@ const BuyBox = () => {
   const basket = useBasketStore((state) => state.basket);
   const totalPrice = useBasketStore((state) => state.totalPrice);
 
+  const itemCount = useMemo(
+    () =>
+      basket.reduce(
+        (accumulator, basketItem) => basketItem.quantity + accumulator,
+        0
+      ),
+    [basket]
+  );
+
   return (
-    <div>
-      <Card>
-        <Typography style={{ fontSize: 18, fontWeight: 500, margin: 0 }}>
-          Total: £{totalPrice}
-        </Typography>
+    <div style={{ position: 'relative' }}>
+      <BuyBoxCard>
+        <PriceTypography>Total: £{totalPrice}</PriceTypography>
+        <Typography>{itemCount} basket items</Typography>
         {basket.length > 0 && (
-          <Button style={{ marginTop: '1em', width: '100%' }}>
-            Proceed to Checkout
-          </Button>
+          <Button style={{ width: '100%' }}>Proceed to Checkout</Button>
         )}
-      </Card>
+      </BuyBoxCard>
     </div>
   );
 };

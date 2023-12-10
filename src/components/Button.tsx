@@ -72,7 +72,7 @@ const StyledButton = styled.button<{
 
       if (props.$variant === 'ghost')
         return Color(props.theme.colors.primary)
-          [props.theme.mode === 'dark' ? 'lighten' : 'darken'](0.15)
+          [props.theme.mode === 'dark' ? 'lighten' : 'darken'](0.3)
           .toString();
 
       return props.theme.colors.primary;

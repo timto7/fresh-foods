@@ -10,8 +10,12 @@ import ColorModeButton from './ColorModeButton';
 
 const NavContainer = styled.div`
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 2em;
   position: relative;
+
+  @media (max-width: 640px) {
+    margin-bottom: 1em;
+  }
 `;
 
 const Nav = styled.nav`
@@ -34,7 +38,7 @@ const SiteTitle = styled.span`
   font-size: 24px;
   font-weight: 800;
 
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
     display: none;
   }
 `;

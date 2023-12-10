@@ -13,12 +13,17 @@ const StyledCard = styled(Card)`
   flex-direction: column;
   justify-content: space-between;
   height: 310px;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
   width: 240px;
 
   @media (max-width: 640px) {
     align-items: center;
+    margin-bottom: 0em;
     width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 1em;
+    }
   }
 `;
 

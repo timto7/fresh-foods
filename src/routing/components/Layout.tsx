@@ -10,6 +10,14 @@ const MasterContainer = styled.div`
   width: 100%;
 `;
 
+const Main = styled.main`
+  padding-bottom: 2em;
+
+  @media (max-width: 640px) {
+    padding-bottom: 1em;
+  }
+`;
+
 const GlobalStyle = createGlobalStyle`
   * {
     transition: color .1s ease, background-color .1s ease;
@@ -25,9 +33,9 @@ const Layout = () => {
     <MasterContainer>
       <Header />
       <Content>
-        <main style={{ paddingBottom: 20 }}>
+        <Main>
           <Outlet />
-        </main>
+        </Main>
       </Content>
       <GlobalStyle />
       <ScrollRestoration />
