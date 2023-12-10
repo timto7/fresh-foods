@@ -25,9 +25,9 @@ const QuantitySpinner = ({
   basketMode = false,
   product,
 }: QuantitySpinnerProps) => {
+  // Selectors are used to minimise re-renders when add/removing items
   const addItem = useBasketStore((state) => state.addItem);
   const removeItem = useBasketStore((state) => state.removeItem);
-
   const quantity = useBasketStore(
     (state) =>
       state.basket.find((basketItem) => basketItem.product.id === product.id)

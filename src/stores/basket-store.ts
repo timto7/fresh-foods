@@ -17,6 +17,9 @@ interface BasketStore {
   clearBasket: () => void;
 }
 
+// The store exports basket and total price state (calculated on change)
+// along with reducers to edit the baskey. Persistance middleware is used
+// to syncronise the basket state with local-storage.
 const useBasketStore = create<BasketStore>()(
   persist(
     (set, get) => {
